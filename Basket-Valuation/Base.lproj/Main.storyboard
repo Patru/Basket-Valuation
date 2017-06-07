@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Basket Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" userLabel="Basket Controller" customClass="BasketController" customModule="Basket_Valuation" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,293 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter the number of items for each desired product." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CWm-b0-eUf">
+                                <rect key="frame" x="16" y="40" width="343" height="57.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dnI-ai-9ac" userLabel="End Editing">
+                                <rect key="frame" x="16" y="20" width="343" height="305.5"/>
+                                <accessibility key="accessibilityConfiguration" identifier="endEditingButton"/>
+                                <connections>
+                                    <action selector="endEditing:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vMI-r2-AW4"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="6rx-pm-uIS">
+                                <rect key="frame" x="16" y="137.5" width="272.5" height="156"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="REh-K2-wD2">
+                                        <rect key="frame" x="0.0" y="0.0" width="272.5" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Peas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TyX-Jr-R1O">
+                                                <rect key="frame" x="0.0" y="0.0" width="47.5" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aIz-ZX-Kks">
+                                                <rect key="frame" x="57.5" y="0.0" width="50" height="30"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="PeaBagsField"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bags ($0.95 each)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NhV-BR-Z0q">
+                                                <rect key="frame" x="117.5" y="0.0" width="155" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4Oj-k8-J4H">
+                                        <rect key="frame" x="0.0" y="42" width="272.5" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Eggs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJk-oV-QPy">
+                                                <rect key="frame" x="0.0" y="0.0" width="47.5" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z32-2O-1RW">
+                                                <rect key="frame" x="57.5" y="0.0" width="50" height="30"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="EggDozensField"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dozens ($2.10 each)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ip-g0-EQ0">
+                                                <rect key="frame" x="117.5" y="0.0" width="155" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="k4N-lU-EWg">
+                                        <rect key="frame" x="0.0" y="84" width="272.5" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Milk" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Sb-Sg-XmZ">
+                                                <rect key="frame" x="0.0" y="0.0" width="47.5" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TqC-Eg-EF5">
+                                                <rect key="frame" x="57.5" y="0.0" width="50" height="30"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="MilkBottlesField"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bottles ($1.30 each)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vNz-gy-kdI">
+                                                <rect key="frame" x="117.5" y="0.0" width="155" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mrJ-S9-haH">
+                                        <rect key="frame" x="0.0" y="126" width="272.5" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beans" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cx3-1m-CVv">
+                                                <rect key="frame" x="0.0" y="0.0" width="47.5" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G7D-hA-DpU">
+                                                <rect key="frame" x="57.5" y="0.0" width="50" height="30"/>
+                                                <accessibility key="accessibilityConfiguration" identifier="BeanCansField"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="iVc-XW-tFe"/>
+                                                </constraints>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cans ($0.73 each)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s78-mX-uVJ">
+                                                <rect key="frame" x="117.5" y="0.0" width="155" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="G7D-hA-DpU" firstAttribute="width" secondItem="TqC-Eg-EF5" secondAttribute="width" id="6Ft-Xg-BCk"/>
+                                    <constraint firstItem="s78-mX-uVJ" firstAttribute="width" secondItem="NhV-BR-Z0q" secondAttribute="width" id="Cpi-Q6-9Of"/>
+                                    <constraint firstItem="G7D-hA-DpU" firstAttribute="width" secondItem="aIz-ZX-Kks" secondAttribute="width" id="OoO-wp-Xxd"/>
+                                    <constraint firstItem="s78-mX-uVJ" firstAttribute="width" secondItem="vNz-gy-kdI" secondAttribute="width" id="SsJ-8q-aky"/>
+                                    <constraint firstItem="s78-mX-uVJ" firstAttribute="width" secondItem="8ip-g0-EQ0" secondAttribute="width" id="afG-1d-4VG"/>
+                                    <constraint firstItem="G7D-hA-DpU" firstAttribute="width" secondItem="Z32-2O-1RW" secondAttribute="width" id="yDp-bg-C3p"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LDU-fx-sdk">
+                                <rect key="frame" x="154.5" y="333.5" width="66" height="30"/>
+                                <accessibility key="accessibilityConfiguration" identifier="CheckoutButton"/>
+                                <state key="normal" title="Checkout"/>
+                                <connections>
+                                    <segue destination="zXo-XW-pJo" kind="show" identifier="Checkout" id="F31-9g-3fk"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="CWm-b0-eUf" secondAttribute="trailing" id="4If-tJ-LED"/>
+                            <constraint firstItem="LDU-fx-sdk" firstAttribute="top" secondItem="dnI-ai-9ac" secondAttribute="bottom" constant="8" id="4f7-qM-kkf"/>
+                            <constraint firstItem="6rx-pm-uIS" firstAttribute="top" secondItem="CWm-b0-eUf" secondAttribute="bottom" constant="40" id="7Ee-dT-vjH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dnI-ai-9ac" secondAttribute="trailing" id="JXi-kx-WoI"/>
+                            <constraint firstItem="LDU-fx-sdk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="L3m-iu-j95"/>
+                            <constraint firstItem="dnI-ai-9ac" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="W2v-Qu-gt1"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="CWm-b0-eUf" secondAttribute="leading" id="Zbx-ZX-z1O"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="6rx-pm-uIS" secondAttribute="leading" id="azQ-2L-KaX"/>
+                            <constraint firstItem="dnI-ai-9ac" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="dRx-n4-pF3"/>
+                            <constraint firstItem="LDU-fx-sdk" firstAttribute="top" secondItem="6rx-pm-uIS" secondAttribute="bottom" constant="40" id="mMf-uu-zyL"/>
+                            <constraint firstItem="CWm-b0-eUf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="wkL-hA-zwC"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="beansField" destination="G7D-hA-DpU" id="cD9-X6-X3r"/>
+                        <outlet property="eggsField" destination="Z32-2O-1RW" id="meV-kQ-Z2m"/>
+                        <outlet property="milkField" destination="TqC-Eg-EF5" id="acM-RX-cgu"/>
+                        <outlet property="peasField" destination="aIz-ZX-Kks" id="8ex-sU-4ZW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+        </scene>
+        <!--Checkout Controller-->
+        <scene sceneID="oCn-za-WSB">
+            <objects>
+                <viewController storyboardIdentifier="CheckoutController" id="zXo-XW-pJo" userLabel="Checkout Controller" customClass="CheckoutController" customModule="Basket_Valuation" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y6q-Ne-BL1"/>
+                        <viewControllerLayoutGuide type="bottom" id="rBO-qB-zyG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CWk-vL-068">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Basket Valuation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qwq-D0-qsz">
+                                <rect key="frame" x="119.5" y="40" width="137" height="20.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oLK-8G-gA9">
+                                <rect key="frame" x="115" y="605" width="190" height="30"/>
+                                <accessibility key="accessibilityConfiguration" identifier="BackToBasketButton"/>
+                                <state key="normal" title="Back to basket composition"/>
+                                <connections>
+                                    <segue destination="KJA-xW-eoM" kind="unwind" unwindAction="unwindToBasketControllerWithSegue:" id="TPP-Va-mTl"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="9kA-8u-R2A">
+                                <rect key="frame" x="16" y="80.5" width="343" height="100"/>
+                                <color key="backgroundColor" red="0.76580920990000001" green="1" blue="0.73604068180000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="xA3-Gi-KsS"/>
+                                </constraints>
+                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Its total value is" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Luu-vD-J8M">
+                                <rect key="frame" x="16" y="205.5" width="118.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EEh-P2-6Q7">
+                                <rect key="frame" x="174" y="205.5" width="42" height="20.5"/>
+                                <accessibility key="accessibilityConfiguration" identifier="dollarAmount"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select currency to convert into" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o7u-0R-Udf">
+                                <rect key="frame" x="16" y="246" width="235.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EHA-ND-ADn">
+                                <rect key="frame" x="16" y="322" width="94" height="258"/>
+                                <accessibility key="accessibilityConfiguration" identifier="CurrencyPicker"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="zXo-XW-pJo" id="YuD-dP-g8X"/>
+                                    <outlet property="delegate" destination="zXo-XW-pJo" id="dvW-HF-gU2"/>
+                                </connections>
+                            </pickerView>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="0oI-Ae-PnW">
+                                <rect key="frame" x="179" y="401" width="180" height="101.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="initializing rates" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SO3-NU-hwg">
+                                        <rect key="frame" x="0.0" y="0.0" width="180" height="20.5"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="RateLabel"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Converted value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezs-qx-CwT">
+                                        <rect key="frame" x="0.0" y="40.5" width="180" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YrC-89-K8p">
+                                        <rect key="frame" x="0.0" y="81" width="180" height="20.5"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="convertedAmount"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="9kA-8u-R2A" secondAttribute="trailing" id="0Fp-aQ-eru"/>
+                            <constraint firstItem="Qwq-D0-qsz" firstAttribute="top" secondItem="y6q-Ne-BL1" secondAttribute="bottom" constant="20" id="4P5-Hf-rrk"/>
+                            <constraint firstItem="rBO-qB-zyG" firstAttribute="top" secondItem="oLK-8G-gA9" secondAttribute="bottom" constant="32" id="85q-1n-j9n"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="EHA-ND-ADn" secondAttribute="trailing" constant="200" id="AFg-eX-r38"/>
+                            <constraint firstItem="Qwq-D0-qsz" firstAttribute="centerX" secondItem="CWk-vL-068" secondAttribute="centerX" id="DzS-k4-PcO"/>
+                            <constraint firstItem="EHA-ND-ADn" firstAttribute="top" secondItem="o7u-0R-Udf" secondAttribute="bottom" constant="20" id="JUy-Jl-KhK"/>
+                            <constraint firstItem="0oI-Ae-PnW" firstAttribute="leading" secondItem="EHA-ND-ADn" secondAttribute="trailing" constant="20" id="JfI-wn-JfO"/>
+                            <constraint firstItem="EEh-P2-6Q7" firstAttribute="leading" secondItem="Luu-vD-J8M" secondAttribute="trailing" constant="40" id="NQ6-uo-KIe"/>
+                            <constraint firstItem="9kA-8u-R2A" firstAttribute="top" secondItem="Qwq-D0-qsz" secondAttribute="bottom" constant="20" id="SJ4-PS-sEI"/>
+                            <constraint firstItem="Luu-vD-J8M" firstAttribute="top" secondItem="9kA-8u-R2A" secondAttribute="bottom" constant="25" id="TU7-qR-xRx"/>
+                            <constraint firstItem="o7u-0R-Udf" firstAttribute="top" secondItem="Luu-vD-J8M" secondAttribute="bottom" constant="20" id="W0W-cD-alK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0oI-Ae-PnW" secondAttribute="trailing" id="YNY-0X-pjr"/>
+                            <constraint firstItem="EEh-P2-6Q7" firstAttribute="top" secondItem="9kA-8u-R2A" secondAttribute="bottom" constant="25" id="ZR1-1I-4bL"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Luu-vD-J8M" secondAttribute="leading" id="eEe-sb-HYI"/>
+                            <constraint firstItem="oLK-8G-gA9" firstAttribute="top" relation="greaterThanOrEqual" secondItem="EHA-ND-ADn" secondAttribute="bottom" constant="20" id="eYj-ie-8NS"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="o7u-0R-Udf" secondAttribute="leading" id="ey8-6p-sOc"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="9kA-8u-R2A" secondAttribute="leading" id="hIy-GX-33a"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="EHA-ND-ADn" secondAttribute="leading" id="mRK-bh-rrz"/>
+                            <constraint firstItem="oLK-8G-gA9" firstAttribute="top" relation="lessThanOrEqual" secondItem="EHA-ND-ADn" secondAttribute="bottom" constant="75" id="ot4-td-yjM"/>
+                            <constraint firstItem="0oI-Ae-PnW" firstAttribute="centerY" secondItem="EHA-ND-ADn" secondAttribute="centerY" id="rmF-8O-IPW"/>
+                            <constraint firstItem="oLK-8G-gA9" firstAttribute="centerX" secondItem="CWk-vL-068" secondAttribute="centerX" id="u1R-De-juF"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="convertedLabel" destination="YrC-89-K8p" id="Klf-X9-pY5"/>
+                        <outlet property="currencyPicker" destination="EHA-ND-ADn" id="g3i-rd-gax"/>
+                        <outlet property="dollarLabel" destination="EEh-P2-6Q7" id="GOG-MS-VAN"/>
+                        <outlet property="rateLabel" destination="SO3-NU-hwg" id="fPu-80-zbq"/>
+                        <outlet property="summaryField" destination="9kA-8u-R2A" id="3zK-58-IGQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kpu-c5-loi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="KJA-xW-eoM" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="796" y="138.98050974512745"/>
         </scene>
     </scenes>
 </document>
