@@ -18,12 +18,11 @@ class BasketControllerTests: XCTestCase {
         if let initialController = storyboard.instantiateInitialViewController() as? BasketController {
             basketController = initialController
             // The One Weird Trick! (which connects the outlets)
-            let _ = basketController.view
+            // let _ = basketController.view
         }
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
     
